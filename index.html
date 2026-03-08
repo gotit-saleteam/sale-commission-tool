@@ -107,6 +107,13 @@ font-weight:700;
 </tr>
 
 <tr>
+<td>QR Paper-voucher</td>
+<td><div class="input-group"><input id="existing-qrpaper-low" class="form-control" value="0.25"><span class="input-group-text">%</span></div></td>
+<td><div class="input-group"><input id="existing-qrpaper-mid" class="form-control" value="0.30"><span class="input-group-text">%</span></div></td>
+<td><div class="input-group"><input id="existing-qrpaper-high" class="form-control" value="0.35"><span class="input-group-text">%</span></div></td>
+</tr>
+  
+<tr>
 <td>Phone card</td>
 <td><div class="input-group"><input id="existing-phonecard-low" class="form-control" value="0.10"><span class="input-group-text">%</span></div></td>
 <td><div class="input-group"><input id="existing-phonecard-mid" class="form-control" value="0.15"><span class="input-group-text">%</span></div></td>
@@ -170,6 +177,13 @@ font-weight:700;
 <td><div class="input-group"><input id="new-evoucher-high" class="form-control" value="0.70"><span class="input-group-text">%</span></div></td>
 </tr>
 
+<tr>
+<td>QR Paper-voucher</td>
+<td><div class="input-group"><input id="new-qrpaper-low" class="form-control" value="0.50"><span class="input-group-text">%</span></div></td>
+<td><div class="input-group"><input id="new-qrpaper-mid" class="form-control" value="0.60"><span class="input-group-text">%</span></div></td>
+<td><div class="input-group"><input id="new-qrpaper-high" class="form-control" value="0.70"><span class="input-group-text">%</span></div></td>
+</tr>
+  
 <tr>
 <td>Paper voucher</td>
 <td><div class="input-group"><input id="new-paper-low" class="form-control" value="0.10"><span class="input-group-text">%</span></div></td>
@@ -361,9 +375,6 @@ input.value=value
 function calculate(row){
 
 let product=r.querySelector(".product").selectedOptions[0].text
-if(product === "qrpaper"){
-product = "evoucher"
-}
 let client=row.querySelector(".client").value
 let kpi=Number(row.querySelector(".kpi").value)||0
 let value=Number(row.querySelector(".value").value.replace(/,/g,""))||0
@@ -547,3 +558,4 @@ recalculateAll()
 </body>
 
 </html>
+
