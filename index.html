@@ -298,6 +298,7 @@ row.innerHTML=`
 <td>
 <select class="form-select product">
 <option value="evoucher">E-voucher</option>
+<option value="qrpaper">QR Paper-voucher</option>
 <option value="paper">Paper voucher</option>
 <option value="phonecard">Phone card</option>
 <option value="phonetopup">Phone top up</option>
@@ -359,7 +360,10 @@ input.value=value
 
 function calculate(row){
 
-let product=row.querySelector(".product").value
+let product=r.querySelector(".product").selectedOptions[0].text
+if(product === "qrpaper"){
+product = "evoucher"
+}
 let client=row.querySelector(".client").value
 let kpi=Number(row.querySelector(".kpi").value)||0
 let value=Number(row.querySelector(".value").value.replace(/,/g,""))||0
@@ -541,4 +545,5 @@ recalculateAll()
 </script>
 
 </body>
+
 </html>
