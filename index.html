@@ -375,7 +375,7 @@ input.value=value
 
 function calculate(row){
 
-let product=r.querySelector(".product").selectedOptions[0].text
+let product=r.querySelector(".product").value
 let client=row.querySelector(".client").value
 let kpi=Number(row.querySelector(".kpi").value)||0
 let value=Number(row.querySelector(".value").value.replace(/,/g,""))||0
@@ -559,5 +559,6 @@ recalculateAll()
 </body>
 
 </html>
+
 
 
